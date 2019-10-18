@@ -22,11 +22,11 @@ services:
     image: mysql:5.7
     container_name: db-host
     environment:
-    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    - MYSQL_DATABASE=${MYSQL_DATABASE}
-    - MYSQL_USER=${MYSQL_USER}
-    - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-    - TZ=${TZ}
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel_bbs
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      TZ: 'Asia/Tokyo'
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
     - ./docker/db/data:/var/lib/mysql
