@@ -14,11 +14,13 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('post_id');
-            $table->text('body');
-            $table->timestamps();
+            $table->increments('id')->comment('ID');
+            $table->unsignedInteger('user_id')->comment('投稿者のID');
+            $table->unsignedInteger('post_id')->comment('投稿のID');
+            $table->text('body')->comment('コメントの中身');
+            $table->dateTime('created_at')->comment('コメント作成日');
         });
+        DB::statement("ALTER TABLE `comments` COMMENT 'コメント詳細'");
     }
 
     /**
