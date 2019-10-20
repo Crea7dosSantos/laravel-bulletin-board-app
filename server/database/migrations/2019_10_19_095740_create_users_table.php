@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 255)->comment('パスワード');
             $table->string('display_name')->comment('表示名');
             $table->tinyInteger('gender_id')->nullable()->comment('性別ID 1:男性 2:女性');
-            $table->dateTime('created_at')->comment('作成日');
+            $table->timestamps();
         });
         DB::statement("ALTER TABLE `users` COMMENT 'ユーザー'");
     }

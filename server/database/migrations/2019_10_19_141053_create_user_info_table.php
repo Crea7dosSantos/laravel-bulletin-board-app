@@ -17,7 +17,7 @@ class CreateUserInfoTable extends Migration
             $table->increments('id')->comment('ID');
             $table->unsignedInteger('user_id')->comment('ユーザーID');
             $table->string('account_name', 255)->comment('アカウントの名前');
-            $table->datetime('created_at')->comment('作成日');
+            $table->timestamps();
         });
         DB::statement("ALTER TABLE `user_info` COMMENT 'ユーザー情報'");
     }

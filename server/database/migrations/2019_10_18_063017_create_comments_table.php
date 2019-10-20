@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedInteger('user_id')->comment('投稿者のID');
             $table->unsignedInteger('post_id')->comment('投稿のID');
             $table->text('body')->comment('コメントの中身');
-            $table->dateTime('created_at')->comment('コメント作成日');
+            $table->timestamps();
         });
         DB::statement("ALTER TABLE `comments` COMMENT 'コメント詳細'");
     }
