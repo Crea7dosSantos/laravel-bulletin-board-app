@@ -11,6 +11,22 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('comments')->insert([
+            [
+                'body' => "commentscommentscommentscomments",
+                'user_id' => 1,
+                'post_id' => 1
+            ],
+            [
+                'body' => "commentscommentscommentscomments",
+                'user_id' => 2,
+                'post_id' => 2
+            ],
+            [
+                'body' => "commentscommentscommentscomments",
+                'user_id' => 3,
+                'post_id' => 3
+            ]
+        ]);
     }
 }

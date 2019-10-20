@@ -17,18 +17,18 @@ class PostsTableSeeder extends Seeder
     {
         DB::table('posts')->insert([
             [
-                'title' => "投稿のタイトル1",
-                'body' => "本文です。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。\nテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。",
+                'title' => "post1",
+                'body' => "texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext\ncontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontents",
                 'user_id' => 1,
             ],
             [
-                'title' => "投稿のタイトル2",
-                'body' => "本文です。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。\nテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。",
+                'title' => "post2",
+                'body' => "texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext\texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextn",
                 'user_id' => 2,
             ],
             [
-                'title' => "投稿のタイトル3",
-                'body' => "本文です。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。\nテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。",
+                'title' => "post3",
+                'body' => "texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext\texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextn",
                 'user_id' => 3,
             ]
         ]);
