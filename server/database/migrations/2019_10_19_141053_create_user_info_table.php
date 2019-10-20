@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentsTable extends Migration
+class CreateUserInfoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('user_info', function (Blueprint $table) {
             $table->increments('id')->comment('ID');
-            $table->unsignedInteger('user_id')->comment('投稿者のID');
-            $table->unsignedInteger('post_id')->comment('投稿のID');
-            $table->text('body')->comment('コメントの中身');
+            $table->unsignedInteger('user_id')->comment('ユーザーID');
+            $table->string('account_name', 255)->comment('アカウントの名前');
             $table->timestamps();
         });
-        DB::statement("ALTER TABLE `comments` COMMENT 'コメント詳細'");
+        DB::statement("ALTER TABLE `user_info` COMMENT 'ユーザー情報'");
     }
 
     /**
@@ -30,6 +29,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('user_info');
     }
 }
