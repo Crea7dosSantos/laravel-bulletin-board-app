@@ -16,6 +16,7 @@ class User extends Model
         'password',
         'display_name',
         'gender_id',
+        'created_at'
     ];
 
 
