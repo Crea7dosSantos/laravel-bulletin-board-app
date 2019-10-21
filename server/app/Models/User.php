@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,16 +16,18 @@ class User extends Model
         'password',
         'display_name',
         'gender_id',
+        'created_at',
+        'updated_at'
     ];
 
 
     public function posts()
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany('App\Models\Post');
     }
 
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Models\Comment');
     }
 }
