@@ -12,3 +12,4 @@
 */
 
 Route::match('get', '/', 'PostsController@index')->name('top');
+Route::match('get', 'posts/create', 'PostsController@create')->name('create');

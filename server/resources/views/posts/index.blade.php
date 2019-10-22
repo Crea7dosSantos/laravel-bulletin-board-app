@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('content')
+<div class="mb-4">
+    <a href="" class="btn btn-primary">
+        投稿を新規作成する
+    </a>
+</div>
 <div class="container mt-4">
     @foreach ($posts as $post)
     <div class="card mb-4">
