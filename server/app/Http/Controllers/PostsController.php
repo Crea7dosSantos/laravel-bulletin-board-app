@@ -22,4 +22,9 @@ class PostsController extends Controller
         // $posts = Post::orderBy('created_at', 'desc')->get();
         return view('posts.index', ['posts' => $posts]);
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
 }
