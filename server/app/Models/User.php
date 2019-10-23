@@ -14,7 +14,7 @@ class User extends Model
     protected $fillable = [
         'email',
         'password',
-        'display_name',
+        'name',
         'gender_id',
         'created_at',
         'updated_at'
