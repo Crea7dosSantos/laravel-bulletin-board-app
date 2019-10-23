@@ -17,6 +17,7 @@
 
 Route::match('get', '/', 'PostsController@index')->name('top');
 Route::match('get', 'posts/create', 'PostsController@create')->name('create');
+Route::match('post', 'posts/create', 'PostsController@store')->name('store');
 
 Auth::routes();
 
