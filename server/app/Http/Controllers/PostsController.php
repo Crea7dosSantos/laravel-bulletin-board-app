@@ -29,19 +29,7 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-
-        $params = $request->validate([
-            'title' => 'required|max:50',
-            'body' => 'required|max:2000',
-        ]);
-
-
-        Post::create([
-            'user_id' => Auth::id(),
-            'title' => $params['title'],
-            'body' => $params['body'],
-        ]);
-
+        $this->service->create($request);
         return redirect()->route('top');
     }
 }

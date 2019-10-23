@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Post as ModelPost;
+use Illuminate\Support\Facades\Auth;
 
 
 class PostService
@@ -22,6 +23,10 @@ class PostService
             'body' => 'required|max:2000',
         ]);
 
-        ModelPost::create($params);
+        ModelPost::create([
+            'user_id' => Auth::id(),
+            'title' => $params['title'],
+            'body' => $params['body'],
+        ]);
     }
 }
