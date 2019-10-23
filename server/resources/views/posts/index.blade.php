@@ -7,10 +7,21 @@
             投稿を新規作成する
         </a>
     </div>
+    <?php if (Auth::check()) {
+        $id = Auth::id();
+    } ?>
+    俺のIDは{{ $id }}
     @foreach ($posts as $post)
     <div class="card mb-4">
         <div class="card-header">
             {{ $post->title }} : ユーザーIDは {{ $post->user_id }}
+            @if (Auth::check() && $post->user_id == $id)
+            <div class="mb-4 text-right">
+                <a class="btn btn-danger" href="">
+                    削除する
+                </a>
+            </div>
+            @endif
         </div>
         <div class="card-body">
             <p class="card-text">
