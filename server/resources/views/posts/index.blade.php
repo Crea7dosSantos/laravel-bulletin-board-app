@@ -17,7 +17,7 @@
             {{ $post->title }} : ユーザーIDは {{ $post->user_id }}
             @if (Auth::check() && $post->user_id == $id)
             <div class="mb-4 text-right">
-                <a class="btn btn-danger" href="">
+                <a class="btn btn-danger" href="{{ action('PostsController@destroy', $post->id) }}">
                     削除する
                 </a>
             </div>
