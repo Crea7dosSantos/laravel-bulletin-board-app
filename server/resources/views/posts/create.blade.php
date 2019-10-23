@@ -7,7 +7,7 @@
             投稿の新規作成
         </h1>
 
-        <form method="POST" action="{{  }}">
+        <form method="POST" action="">
             @csrf
 
             <fieldset class="mb-4">
