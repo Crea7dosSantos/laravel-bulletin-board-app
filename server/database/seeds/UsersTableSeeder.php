@@ -15,19 +15,19 @@ class UsersTableSeeder extends Seeder
             [
                 'email' => 'hoge@gmail.com',
                 'password' => bcrypt('secret'),
-                'display_name' => 'hogehoge',
+                'name' => 'hogehoge',
                 'gender_id' => 1
             ],
             [
                 'email' => 'huge@gmail.com',
                 'password' => bcrypt('secret'),
-                'display_name' => 'hugehuge',
+                'name' => 'hugehuge',
                 'gender_id' => 2
             ],
             [
                 'email' => 'hege@gmail.com',
                 'password' => bcrypt('secret'),
-                'display_name' => 'hegehege',
+                'name' => 'hegehege',
                 'gender_id' => 3
             ]
         ]);

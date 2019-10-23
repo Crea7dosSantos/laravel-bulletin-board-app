@@ -16,7 +16,7 @@ class CreateUserInfoTable extends Migration
         Schema::create('user_info', function (Blueprint $table) {
             $table->increments('id')->comment('ID');
             $table->unsignedInteger('user_id')->comment('ユーザーID');
-            $table->string('account_name', 255)->comment('アカウントの名前');
+            $table->string('name', 255)->comment('名前');
             $table->timestamps();
         });
         DB::statement("ALTER TABLE `user_info` COMMENT 'ユーザー情報'");
