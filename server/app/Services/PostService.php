@@ -9,6 +9,7 @@ class PostService
 
     public function getPost()
     {
-        return ModelPost::all();
+        $posts = ModelPost::orderBy('created_at', 'desc')->get();
+        return $posts;
     }
 }
