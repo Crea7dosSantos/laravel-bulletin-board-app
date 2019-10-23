@@ -29,4 +29,9 @@ class PostService
             'body' => $params['body'],
         ]);
     }
+
+    public function search($id)
+    {
+        return ModelPost::findOrFail($id);
+    }
 }

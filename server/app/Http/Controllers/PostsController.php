@@ -32,4 +32,10 @@ class PostsController extends Controller
         $this->service->create($request);
         return redirect()->route('top');
     }
+
+    public function show($post_id)
+    {
+        $post = $this->service->search($post_id);
+        return view('posts.show', ['post' => $post]);
+    }
 }

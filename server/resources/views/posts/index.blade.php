@@ -16,6 +16,9 @@
             <p class="card-text">
                 {!! nl2br(e(Str::limit($post->body, 200))) !!}
             </p>
+            <a class="card-link" href="{{ action('PostsController@show', $post->id) }}">
+                続きを読む
+            </a>
         </div>
         <div class="card-footer">
             <span class="mr-2">
