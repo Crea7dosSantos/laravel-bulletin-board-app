@@ -11,9 +11,6 @@
 |
 */
 
-Route::match('get', '/', 'PostsController@index')->name('top');
-Route::match('get', 'posts/create', 'PostsController@create')->name('create');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function () {
+    return view('welcome');
+});
