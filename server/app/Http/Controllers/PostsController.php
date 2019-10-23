@@ -19,7 +19,6 @@ class PostsController extends Controller
     public function index(Request $request)
     {
         $posts = $this->service->getPost();
-        // $posts = Post::orderBy('created_at', 'desc')->get();
         return view('posts.index', ['posts' => $posts]);
     }
 

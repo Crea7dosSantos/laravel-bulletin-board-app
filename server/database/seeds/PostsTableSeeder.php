@@ -2,8 +2,6 @@
 
 use Illuminate\Database\Seeder;
 
-use Illuminate\Support\Facades\DB;
-
 class PostsTableSeeder extends Seeder
 {
     /**
@@ -13,7 +11,6 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        $time = time();
         DB::table('posts')->insert([
             [
                 'title' => "post1",
@@ -30,7 +27,7 @@ class PostsTableSeeder extends Seeder
             [
                 'title' => "post3",
                 'body' => "texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext\texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextn",
-                'user_id' => 3,
+                'user_id' => 2,
                 'created_at' => date("Y-m-d H:i:s"),
             ]
         ]);

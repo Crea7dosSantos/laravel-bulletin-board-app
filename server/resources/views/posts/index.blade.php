@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('../layouts.layout')
 
 @section('content')
 <div class="mb-4">
@@ -10,7 +10,7 @@
     @foreach ($posts as $post)
     <div class="card mb-4">
         <div class="card-header">
-            {{ $post->title }}
+            {{ $post->title }} : ユーザーIDは {{ $post->user_id }}
         </div>
         <div class="card-body">
             <p class="card-text">
