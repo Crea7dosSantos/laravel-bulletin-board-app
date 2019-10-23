@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\Post as ModelPost;
 use Illuminate\Support\Facades\Auth;
-
+use PhpParser\Node\Expr\AssignOp\Mod;
 
 class PostService
 {
@@ -33,5 +33,15 @@ class PostService
     public function search($id)
     {
         return ModelPost::findOrFail($id);
+    }
+
+    public function destroy($id)
+    {
+        $post = ModelPost::findOrFail($id);
+
+        \DB::transaction(function () use ($post) {
+            $post->comments()->delete();
+            $post->delete();
+        });
     }
 }

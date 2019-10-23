@@ -38,4 +38,10 @@ class PostsController extends Controller
         $post = $this->service->search($post_id);
         return view('posts.show', ['post' => $post]);
     }
+
+    public function destroy($post_id)
+    {
+        $this->service->destroy($post_id);
+        return redirect()->route('top');
+    }
 }
