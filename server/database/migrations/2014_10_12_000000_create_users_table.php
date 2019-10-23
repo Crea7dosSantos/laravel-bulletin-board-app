@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->tinyInteger('gender_id')->nullable()->comment('性別ID 1:男性 2:女性');
             $table->timestamps();
         });
     }
