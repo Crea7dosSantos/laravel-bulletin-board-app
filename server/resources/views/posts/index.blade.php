@@ -1,4 +1,5 @@
 @extends('../layouts.layout')
+@inject('getUser', 'App\Services\PostService')
 
 @section('content')
 <div class="container mt-4">
@@ -19,7 +20,10 @@
     @foreach ($posts as $post)
     <div class="card mb-4">
         <div class="card-header">
-            {{ $post->title }} : ユーザーIDは {{ $post->user_id }}
+            {{ $post->title }} by:
+            <?php $user_id = $post->user_id;
+            ?>
+            {{ $getUser->getUserName($user_id) }}
             @if (Auth::check() && $post->user_id == $id)
             <div class="mb-4 text-right">
                 <a class="btn btn-danger" href="{{ action('PostsController@destroy', $post->id) }}">
