@@ -19,17 +19,15 @@
     } ?>
     @foreach ($posts as $post)
     <div class="card mb-4">
-        <div class="card-header">
+        <div class="card-header clearfix">
             {{ $post->title }} by:
             <?php $user_id = $post->user_id;
             ?>
             {{ $userService->getUserName($user_id) }}
             @if (Auth::check() && $post->user_id == $id)
-            <div class="mb-4 text-right">
-                <a class="btn btn-danger" href="{{ action('PostsController@destroy', $post->id) }}">
-                    削除する
-                </a>
-            </div>
+            <a class="btn btn-danger float-right" href="{{ action('PostsController@destroy', $post->id) }}">
+                削除する
+            </a>
             @endif
         </div>
         <div class="card-body">
@@ -53,5 +51,8 @@
         </div>
     </div>
     @endforeach
+    <div class="d-flex justify-content-center mb-5">
+        {{ $posts->links() }}
+    </div>
 </div>
 @endsection

@@ -12,10 +12,9 @@ class PostService
 
     public function getPost()
     {
-        $posts = ModelPost::orderBy('created_at', 'desc')->get();
+        $posts = ModelPost::orderBy('created_at', 'desc')->paginate(10);
         return $posts;
     }
-    // Post::with(['comments'])->orderBy('created_at', 'desc')->paginate(10);
 
     public function create($request)
     {
