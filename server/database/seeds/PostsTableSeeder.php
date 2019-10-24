@@ -15,7 +15,7 @@ class PostsTableSeeder extends Seeder
             [
                 'title' => "post1",
                 'body' => "texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext\ncontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontentscontents",
-                'user_id' => 1,
+                'user_id' => 3,
                 'created_at' => date("Y-m-d H:i:s"),
             ],
             [
@@ -27,7 +27,7 @@ class PostsTableSeeder extends Seeder
             [
                 'title' => "post3",
                 'body' => "texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext\texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttextn",
-                'user_id' => 2,
+                'user_id' => 3,
                 'created_at' => date("Y-m-d H:i:s"),
             ]
         ]);

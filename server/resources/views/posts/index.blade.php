@@ -1,26 +1,33 @@
 @extends('../layouts.layout')
+@inject('userService', 'App\Services\UserService')
 
 @section('content')
 <div class="container mt-4">
     <div class="mb-4">
+        @if (Auth::check())
         <a href="{{ route('create') }}" class="btn btn-primary">
             投稿を新規作成する
         </a>
+        @else
+        <a href="{{ route('login') }}" class="btn btn-primary">
+            ログインして投稿を作成する
+        </a>
+        @endif
     </div>
     <?php if (Auth::check()) {
         $id = Auth::id();
     } ?>
-    俺のIDは{{ $id }}
     @foreach ($posts as $post)
     <div class="card mb-4">
-        <div class="card-header">
-            {{ $post->title }} : ユーザーIDは {{ $post->user_id }}
+        <div class="card-header clearfix">
+            {{ $post->title }} by:
+            <?php $user_id = $post->user_id;
+            ?>
+            {{ $userService->getUserName($user_id) }}
             @if (Auth::check() && $post->user_id == $id)
-            <div class="mb-4 text-right">
-                <a class="btn btn-danger" href="{{ action('PostsController@destroy', $post->id) }}">
-                    削除する
-                </a>
-            </div>
+            <a class="btn btn-danger float-right" href="{{ action('PostsController@destroy', $post->id) }}">
+                削除する
+            </a>
             @endif
         </div>
         <div class="card-body">
@@ -44,5 +51,8 @@
         </div>
     </div>
     @endforeach
+    <div class="d-flex justify-content-center mb-5">
+        {{ $posts->links() }}
+    </div>
 </div>
 @endsection

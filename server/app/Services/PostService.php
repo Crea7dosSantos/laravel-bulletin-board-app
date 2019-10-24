@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Post as ModelPost;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User as ModelUser;
 use PhpParser\Node\Expr\AssignOp\Mod;
 
 class PostService
@@ -11,11 +12,10 @@ class PostService
 
     public function getPost()
     {
-        $posts = ModelPost::orderBy('created_at', 'desc')->get();
+        $posts = ModelPost::orderBy('created_at', 'desc')->paginate(10);
         return $posts;
     }
 
-    // post data create
     public function create($request)
     {
         $params = $request->validate([
