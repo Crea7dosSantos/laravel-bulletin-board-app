@@ -1,5 +1,5 @@
 @extends('../layouts.layout')
-@inject('getUser', 'App\Services\PostService')
+@inject('userService', 'App\Services\UserService')
 
 @section('content')
 <div class="container mt-4">
@@ -23,7 +23,7 @@
             {{ $post->title }} by:
             <?php $user_id = $post->user_id;
             ?>
-            {{ $getUser->getUserName($user_id) }}
+            {{ $userService->getUserName($user_id) }}
             @if (Auth::check() && $post->user_id == $id)
             <div class="mb-4 text-right">
                 <a class="btn btn-danger" href="{{ action('PostsController@destroy', $post->id) }}">

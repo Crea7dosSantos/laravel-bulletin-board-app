@@ -17,13 +17,6 @@ class PostService
     }
     // Post::with(['comments'])->orderBy('created_at', 'desc')->paginate(10);
 
-    public function getUserName($user_id)
-    {
-        $user = ModelUser::findOrFail($user_id);
-        $name = $user->name;
-        return $name;
-    }
-
     public function create($request)
     {
         $params = $request->validate([
