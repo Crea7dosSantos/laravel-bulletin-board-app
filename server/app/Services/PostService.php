@@ -10,7 +10,7 @@ use PhpParser\Node\Expr\AssignOp\Mod;
 class PostService
 {
 
-    public function getPost()
+    public function getAllPost()
     {
         $posts = ModelPost::with(['comments'])->orderBy('created_at', 'desc')->paginate(10);
         return $posts;

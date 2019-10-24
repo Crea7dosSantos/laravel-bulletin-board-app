@@ -17,7 +17,7 @@
     <?php if (Auth::check()) {
         $id = Auth::id();
     } ?>
-    @foreach ($posts as $post)
+    @foreach ($master['posts'] as $key => $post)
     <div class="card mb-4">
         <div class="card-header clearfix">
             {{ $post->title }} by:
@@ -52,7 +52,7 @@
     </div>
     @endforeach
     <div class="d-flex justify-content-center mb-5">
-        {{ $posts->links() }}
+        {{ $master['posts'] }}
     </div>
 </div>
 @endsection

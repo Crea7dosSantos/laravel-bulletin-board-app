@@ -18,8 +18,10 @@ class PostsController extends Controller
 
     public function index(Request $request)
     {
-        $posts = $this->service->getPost();
-        return view('posts.index', ['posts' => $posts]);
+        $master = [];
+        $master['posts'] = $this->service->getAllPost();
+        $this->setViewMaster($master);
+        return view('posts.index', $this->getViewArray());
     }
 
     public function create()
