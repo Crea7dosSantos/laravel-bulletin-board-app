@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Post\Store as RequestStore;
 
 class PostsController extends Controller
 {
@@ -29,7 +30,7 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
-    public function store(Request $request)
+    public function store(RequestStore $request)
     {
         $this->service->create($request);
         return redirect()->route('top');

@@ -18,15 +18,10 @@ class PostService
 
     public function create($request)
     {
-        $params = $request->validate([
-            'title' => 'required|max:50',
-            'body' => 'required|max:2000',
-        ]);
-
         ModelPost::create([
             'user_id' => Auth::id(),
-            'title' => $params['title'],
-            'body' => $params['body'],
+            'title' => $request['title'],
+            'body' => $request['body'],
         ]);
     }
 
