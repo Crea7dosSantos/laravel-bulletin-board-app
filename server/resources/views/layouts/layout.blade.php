@@ -11,17 +11,17 @@
     <header class="navbar navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{{ url('') }}">
-                Laravel
+                お前の掲示板
             </a>
             @if (Route::has('login'))
             <div class="top-right links">
                 @auth
                 <a href="{{ url('/home') }}">{{ Auth::user()['name'] }}</a>
                 @else
-                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('login') }}">ログイン</a>
 
                 @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
+                <a class="ml-3" href="{{ route('register') }}">新規登録</a>
                 @endif
                 @endauth
             </div>
