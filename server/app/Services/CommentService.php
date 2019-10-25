@@ -17,8 +17,7 @@ class CommentService
     public function create($request)
     {
         $post = ModelPost::findOrFail($request['post_id']);
-        $post->comments()->create($request);
-
-        return redirect()->route('posts.show', ['post' => $post]);
+        // $post->comments()->create($request);
+        return $post;
     }
 }

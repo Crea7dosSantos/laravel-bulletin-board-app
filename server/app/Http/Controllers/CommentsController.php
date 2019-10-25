@@ -29,7 +29,7 @@ class CommentsController extends Controller
      */
     public function store(RequestStore $request)
     {
-        $this->srvice->create($request);
-        return redirect()->route('show');
+        $post = $this->service->create($request);
+        return redirect()->action('PostsController@show', $post->id);
     }
 }
