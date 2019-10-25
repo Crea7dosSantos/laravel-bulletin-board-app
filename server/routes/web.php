@@ -18,8 +18,8 @@
 Route::match('get', '/', 'PostsController@index')->name('top');
 Route::match('get', 'posts/create', 'PostsController@create')->name('create');
 Route::match('post', 'posts/create', 'PostsController@store')->name('store');
-// Route::match('get', 'posts/{id}', 'PostsController@show')->name('show');
 Route::match('get', 'posts/{id}', 'PostsController@show')->name('show');
+Route::match('post', 'posts/{id}', 'CommentsController@store')->name('comments');
 Route::match('get', 'posts/delete/{id}', 'PostsController@destroy')->name('delete');
 
 Auth::routes();

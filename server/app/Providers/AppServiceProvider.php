@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind('App\Services\PostService');
         $this->app->bind('App\Services\UserService');
+        $this->app->bind('App\Services\CommentService');
     }
 
     /**
