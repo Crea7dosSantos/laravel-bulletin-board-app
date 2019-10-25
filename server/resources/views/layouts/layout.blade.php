@@ -11,7 +11,7 @@
     <header class="navbar navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{{ url('') }}">
-                俺の掲示板
+                お前の掲示板
             </a>
             @if (Route::has('login'))
             <div class="top-right links">
