@@ -17,7 +17,11 @@ class CommentService
     public function create($request)
     {
         $post = ModelPost::findOrFail($request['post_id']);
-        // $post->comments()->create($request);
+        $post->comments()->create([
+            'user_id' => Auth::id(),
+            'post_id' => $request['post_id'],
+            'body' => $request['body'],
+        ]);
         return $post;
     }
 }
