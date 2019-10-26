@@ -11,6 +11,7 @@ class Post extends Model
         'user_id',
         'title',
         'body',
+        'image_path',
         'created_at',
         'updated_at',
     ];
