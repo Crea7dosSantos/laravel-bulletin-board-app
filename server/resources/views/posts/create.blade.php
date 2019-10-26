@@ -36,6 +36,18 @@
                     @endif
                 </div>
 
+                <div class="form-group">
+                    <label for="image">
+                        画像
+                    </label>
+                    <input id="image" name="image" class="form-control {{ $errors->has('image') ? 'is-invalid' : '' }}" value="{{ old('image') }}" type="file">
+                    @if ($errors->has('image'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('image') }}
+                    </div>
+                    @endif
+                </div>
+
                 <div class="mt-5">
                     <a class="btn btn-secondary" href="{{ route('top') }}">
                         キャンセル
