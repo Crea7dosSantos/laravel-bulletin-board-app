@@ -18,10 +18,17 @@ class PostService
 
     public function create($request)
     {
+        if ($request->image) {
+            $file_name = $request->image->getClientOriginalName();
+        } else {
+            $file_name = 'hoge.jpg';
+        }
+
         ModelPost::create([
             'user_id' => Auth::id(),
             'title' => $request['title'],
             'body' => $request['body'],
+            'image_path' => $file_name,
         ]);
     }
 
