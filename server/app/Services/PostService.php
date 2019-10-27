@@ -21,7 +21,8 @@ class PostService
         if ($request->image) {
             $file_name = $request->image->getClientOriginalName();
         } else {
-            $file_name = 'hoge.jpg';
+            $random_int = mt_rand(1, 4);
+            $file_name = '/example' . strval($random_int) . '.jpg';
         }
 
         ModelPost::create([
