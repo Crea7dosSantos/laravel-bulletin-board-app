@@ -18,10 +18,21 @@ class PostService
 
     public function create($request)
     {
+        if ($request->image) {
+            $file_name = $request->image->getClientOriginalName();
+            $request->image->storeAs('public/img', $file_name);
+            $file_path = 'storage/img/' . $file_name;
+        } else {
+            $random_int = mt_rand(1, 4);
+            $file_name = strval($random_int) . '.jpg';
+            $file_path = 'storage/img/example/' . $file_name;
+        }
+
         ModelPost::create([
             'user_id' => Auth::id(),
             'title' => $request['title'],
             'body' => $request['body'],
+            'image_path' => $file_path,
         ]);
     }
 

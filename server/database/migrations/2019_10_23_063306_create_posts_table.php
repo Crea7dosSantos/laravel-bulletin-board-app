@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->unsignedInteger('user_id')->comment('投稿者のID');
             $table->string('title', 50)->comment('タイトル');
             $table->text('body')->comment('中身の文章');
+            $table->string('image_path')->comment('投稿画像ファイルのPATH');
             $table->timestamps();
         });
         DB::statement("ALTER TABLE `posts` COMMENT '投稿'");

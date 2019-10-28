@@ -7,7 +7,7 @@
             投稿の新規作成
         </h1>
 
-        <form method="POST" action="{{ route('store') }}">
+        <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
             @csrf
 
             <fieldset class="mb-4">
@@ -32,6 +32,18 @@
                     @if ($errors->has('body'))
                     <div class="invalid-feedback">
                         {{ $errors->first('body') }}
+                    </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label for="image">
+                        画像
+                    </label>
+                    <input id="image" name="image" class="form-control {{ $errors->has('image') ? 'is-invalid' : '' }}" value="{{ old('image') }}" type="file">
+                    @if ($errors->has('image'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('image') }}
                     </div>
                     @endif
                 </div>
