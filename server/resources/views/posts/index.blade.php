@@ -30,6 +30,7 @@
             </a>
             @endif
         </div>
+        <img alt="ロゴ" src="{{ asset($post->image_path) }}">
         <div class="card-body">
             <p class="card-text">
                 {!! nl2br(e(Str::limit($post->body, 200))) !!}
